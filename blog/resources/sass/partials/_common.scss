@@ -1,0 +1,16 @@
+// Commons
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $brand_color;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 1170px;
+    margin: auto;
+}

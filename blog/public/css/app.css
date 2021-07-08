@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightblue;
+  font-family: sans-serif;
+}
+
+.container {
+  width: 1170px;
+  margin: auto;
+}
+
+#site_header {
+  background-color: white;
+  color: #333;
+  text-align: center;
+}
+#site_header .logo {
+  padding: 2rem 0;
+}
+#site_header .logo img {
+  height: 110px;
+}
+#site_header .menu {
+  display: flex;
+  justify-content: center;
+}
+#site_header .menu a {
+  text-decoration: none;
+  color: #333;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+}
+#site_header .menu a.active {
+  background-color: lightblue;
+}
+
+#main_content {
+  background-image: url("../img/fondo-pag-speciali.jpg");
+}
+
+.pastas {
+  display: flex;
+  flex-wrap: wrap;
+}
+.pastas .card {
+  position: relative;
+  width: calc(100% / 3 - 1rem);
+  margin: 0.5rem;
+}
+.pastas .card img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.pastas .card .pasta_details {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.pastas .card:hover .pasta_details {
+  display: block;
+}
+
+footer {
+  background-color: white;
+  height: 200px;
+}
