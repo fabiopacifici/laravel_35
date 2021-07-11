@@ -1,0 +1,62 @@
+#site_header {
+    .topnav {
+        background-color: $dc-blue;
+        color: $dc-white;
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+
+            a {
+                font-size: 0.75rem;
+                color: white;
+                text-transform: uppercase;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+        }
+    }
+
+    .menu_wrapper {
+        background-color: $dc-white;
+
+
+        nav {
+            display: flex;
+            align-items: center;
+
+            .logo {
+                width: 70px;
+                height: auto;
+            }
+
+            .main_menu {
+                a {
+                    padding: 2rem 0rem;
+                    margin: 0 1rem;
+                    color: #4D5661;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+
+                    &:hover {
+                        border-bottom: 4px solid $dc-blue;
+                    }
+                }
+            }
+
+
+        }
+    }
+}
+
+// Hero image
+.hero-image {
+    background-image: url('../img/jumbotron.jpg');
+    background-size: cover;
+    height: 400px;
+
+}
