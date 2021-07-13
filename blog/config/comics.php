@@ -47,9 +47,7 @@ return [
             "series" => "American Vampire 1976",
             "sale_date" => "2020-10-06",
             "type" => "comic book",
-            "artists" => [
-                "Rafael Albuquerque"
-            ],
+            "artists" => null,
             "writers" => [
                 "Scott Snyder"
             ],

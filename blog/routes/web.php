@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,56 +14,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-
-    return view('home');
-})->name('home');
-
-
-Route::get('/characters', function () {
-    return 'characters Page';
-})->name('characters');
-
+Route::get('/', 'PageController@index')->name('home');
+Route::get('/characters', 'PageController@characters')->name('characters');
 
 /* Comics routes */
-
-Route::get('/comics', function () {
-    $comics = config('comics.data');
-    //ddd($comics);
-    return view('comics.index', compact('comics'));
-})->name('comics');
-
-Route::get('comics/{id}', function ($id) {
-    $comics = config('comics.data');
-    //ddd($comics[$id]);
-    if (is_numeric($id) && $id < count($comics) && $id >= 0) {
-        $comic = $comics[$id];
-        return view('comics.show', compact('comic'));
-    } else {
-        abort(404);
-    }
-})->name('comic');
-
+Route::get('/comics', 'PageController@comics')->name('comics');
+Route::get('comics/{id}', 'PageController@comic')->name('comic');
 /* Comics routes */
 
+Route::get('movies', 'PageController@movies')->name('movies');
+Route::get('tv', 'PageController@tv')->name('tv');
+Route::get('games', 'PageController@games')->name('games');
 
-Route::get('/movies', function () {
-    return 'Movies Page';
-})->name('movies');
-Route::get('/tv', function () {
+/* Posts */
+Route::get('news', 'PostController@index')->name('news');
 
-    return 'TV Page';
-})->name('tv');
-Route::get('/games', function () {
+/* /Posts */
 
-    return 'Games Page';
-})->name('games');
 
-Route::get('/news', function () {
-
-    return 'News Page';
-})->name('news');
-
-Route::get('/shop', function () {
-    return 'Shop Page';
-})->name('shop');
+Route::get('shop', 'PageController@shop')->name('shop');
