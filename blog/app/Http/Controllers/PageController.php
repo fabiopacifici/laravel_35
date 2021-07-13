@@ -42,9 +42,9 @@ class PageController extends Controller
 
     public function movies()
     {
-        //$movies = Movie::all();
-        $movies = Movie::where('id', 3)->get();
-        ddd(now(), $movies);
+        $movies = Movie::all();
+        //$movies = Movie::where('id', 3)->get();
+        //ddd(now(), $movies);
         return view('movies.index', compact('movies'));
     }
 
