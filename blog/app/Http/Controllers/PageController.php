@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Movie;
+use App\Product;
 
 class PageController extends Controller
 {
@@ -63,6 +64,11 @@ class PageController extends Controller
 
     public function shop()
     {
-        return 'Shop Page';
+        $products = Product::all();
+        return view('shop.index', compact('products'));
+    }
+    public function product()
+    {
+        return view('shop.show');
     }
 }

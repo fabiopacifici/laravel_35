@@ -14,7 +14,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        //ddd($products);
+        return view('products.index', compact('products'));
     }
 
     /**
@@ -24,7 +26,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('products.create');
+
     }
 
     /**
@@ -35,7 +38,17 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validated = $request->validate([
+            'name' => 'required | min:5 | max:100',
+            'descripton' => 'nullable',
+            'image' => 'required',
+            'qty' => 'required | numeric',
+            'price' => 'required | numeric'
+        ]);
+
+        Product::create($validated);
+        return redirect()->route('products.index');
     }
 
     /**
@@ -46,7 +59,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('products.show', compact('product'));
     }
 
     /**
@@ -57,7 +70,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('products.edit', compact('product'));
     }
 
     /**
@@ -69,7 +82,16 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required | min:5 | max:100',
+            'descripton' => 'nullable',
+            'image' => 'required',
+            'qty' => 'required | numeric',
+            'price' => 'required | numeric'
+        ]);
+
+        $product->update($validated);
+        return redirect()->route('products.index');
     }
 
     /**
@@ -80,6 +102,6 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
     }
 }

@@ -31,6 +31,17 @@ a {
   border-bottom: 4px solid #0282F9;
 }
 
+.products {
+  display: flex;
+}
+.products .product {
+  margin: 1rem;
+  width: calc(100%/5 - 1rem);
+}
+.products .product img {
+  max-width: 100%;
+}
+
 #site_header .topnav {
   background-color: #0282F9;
   color: #FFFFFF;

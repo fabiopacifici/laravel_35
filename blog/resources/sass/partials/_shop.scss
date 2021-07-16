@@ -1,0 +1,12 @@
+.products {
+    display: flex;
+
+    .product {
+        img {
+            max-width: 100%;
+        }
+
+        margin: 1rem;
+        width: calc(100%/5 - 1rem);
+    }
+}

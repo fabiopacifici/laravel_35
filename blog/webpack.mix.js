@@ -17,4 +17,6 @@ mix.js('resources/js/app.js', 'public/js')
         processCssUrls: false
     })
     .sass('resources/sass/app.scss', 'public/css')
-    .sass('resources/sass/comic.scss', 'public/css');
+    .sass('resources/sass/comic.scss', 'public/css')
+    .sass('resources/sass/admin.scss', 'public/css');
+

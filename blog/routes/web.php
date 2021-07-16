@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 
@@ -43,4 +44,7 @@ Route::delete('posts/{post}', 'PostController@destroy')->name('posts.delete');
 Route::resource('movies', MovieController::class);
 
 
-Route::resource('products', ShopController::class);
+/* Products Routes */
+
+//Route::resource('products', ProductController::class);
+Route::resource('products', 'ProductController');
