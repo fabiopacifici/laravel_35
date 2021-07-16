@@ -18,18 +18,29 @@ Route::get('/', 'PageController@index')->name('home');
 Route::get('/characters', 'PageController@characters')->name('characters');
 
 /* Comics routes */
-Route::get('/comics', 'PageController@comics')->name('comics');
-Route::get('comics/{id}', 'PageController@comic')->name('comic');
+//Route::get('/comics', 'PageController@comics')->name('comics');
+//Route::get('comics/{id}', 'PageController@comic')->name('comic');
+Route::resource('comics', ComicController::class);
+
 /* Comics routes */
 
-Route::get('movies', 'PageController@movies')->name('movies');
+//Route::get('movies', 'PageController@movies')->name('movies');
 Route::get('tv', 'PageController@tv')->name('tv');
 Route::get('games', 'PageController@games')->name('games');
+Route::get('shop', 'PageController@shop')->name('shop');
 
-/* Posts */
-Route::get('news', 'PostController@index')->name('news');
 
+Route::get('posts', 'PostController@index')->name('posts');
+Route::get('posts/create', 'PostController@create')->name('posts.create');
+Route::post('posts', 'PostController@store')->name('posts.store');
+Route::get('posts/{post}', 'PostController@show')->name('posts.show');
+Route::get('posts/{post}/edit', 'PostController@edit')->name('posts.edit');
+Route::put('posts/{post}', 'PostController@update')->name('posts.update');
+Route::delete('posts/{post}', 'PostController@destroy')->name('posts.delete');
 /* /Posts */
 
+/* Route resource */
+Route::resource('movies', MovieController::class);
 
-Route::get('shop', 'PageController@shop')->name('shop');
+
+Route::resource('products', ShopController::class);
