@@ -220,11 +220,11 @@ return [
             'text' => 'Characters'
         ],
         [
-            'href' => 'comics',
+            'href' => 'comics.index',
             'text' => 'Comics'
         ],
         [
-            'href' => 'movies',
+            'href' => 'movies.index',
             'text' => 'Movies'
         ],
         [
@@ -236,7 +236,7 @@ return [
             'text' => 'Games'
         ],
         [
-            'href' => 'news',
+            'href' => 'posts',
             'text' => 'News'
         ],
         [
