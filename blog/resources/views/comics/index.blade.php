@@ -13,12 +13,12 @@
   <section class="container">
     <h2 class="section_title">Comics Page</h2>
     <div class="comics_container">
-      @foreach($comics as $index => $comic)
+      @foreach($comics as $comic)
       <div class="comic">
 
-        <a href="{{ route('comic', ['id' => $index]) }}">
-          <img src="{{ $comic['thumb'] }}" alt="">
-          {{ $comic['series'] }}
+        <a href="{{ route('comics.show', $comic->id) }}">
+          <img src="{{ $comic->cover }}" alt="">
+          {{ $comic->series }}
         </a>
       </div>
       @endforeach

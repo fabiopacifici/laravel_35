@@ -7,29 +7,18 @@
 @endsection
 
 @section('content')
-<h1>Comics Page</h1>
-
-
-
 <div class="comic">
-  <img src="{{$comic['thumb']}}" alt="">
-  {{ $comic['title'] }}
-  <p>{{ $comic['description'] }}</p>
-
-  <div class="artists">
-
-
-    @if($comic['artists'])
-    Artists:
-    @forelse($comic['artists'] as $artist)
-    <a href="#">{{$artist}}</a>
-    @empty
-    <a href="#">no artists to show</a>
-    @endforelse
-    @endif
-
-  </div>
+  <img src="{{$comic->cover}}" alt="">
+  <h2> {{ $comic->title }}</h2>
+  <p>{{ $comic->description }}</p>
+  <p>$ {{$comic->price}}</p>
+  <p>Series: {{ $comic->series }}</p>
 </div>
 
+<form action="{{route('comics.destroy', $comic->id)}}" method="post">
+  @csrf
+  @method('DELETE')
+  <button type="submit" class="btn btn-danger">Delete</button>
+</form>
 
 @endsection
