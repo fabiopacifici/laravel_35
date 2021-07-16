@@ -21,7 +21,9 @@ class PageController extends Controller
     }
 
 
-    public function comics()
+    
+
+/*     public function comics()
     {
         $comics = config('comics.data');
         //ddd($comics);
@@ -38,15 +40,15 @@ class PageController extends Controller
         } else {
             abort(404);
         }
-    }
+    } */
 
-    public function movies()
+/*     public function movies()
     {
         $movies = Movie::all();
         //$movies = Movie::where('id', 3)->get();
         //ddd(now(), $movies);
         return view('movies.index', compact('movies'));
-    }
+    } */
 
     public function tv()
     {
